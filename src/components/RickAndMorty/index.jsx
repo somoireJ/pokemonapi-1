@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-
+import './index.css'
+import { Outlet } from "react-router-dom";
 
 const RickAndMorty = ()=>{
     const [character, setCharacter]= useState([])
@@ -28,6 +29,9 @@ const RickAndMorty = ()=>{
             <h1>RickAnd Morty</h1>
             <button onClick={decrement}> - </button>
             <button onClick={increment}> + </button>
+            <div className="outlet">
+                <Outlet />
+            </div>
 
             {character.map((character)=>{
                 return(

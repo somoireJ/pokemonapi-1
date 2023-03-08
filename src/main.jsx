@@ -9,23 +9,34 @@ import {
 
 import RickAndMorty from './components/RickAndMorty';
 import Character from './components/Character';
-import NewComponent from './components/NewComponent';
+import ErrorPage from './components/ErrorPage';
+import References from './components/useRef';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RickAndMorty />,
+    // errorElement: <ErrorPage />,
+    // children : [
+    //   {
+    //     path : '/:id',
+    //     element: <Character />
+    //   }
+    // ]
   },
-  //normal routing
-  {
-    path: '/another_route',
-    element: <NewComponent />,
-  },
+
   //dynamic routing
   {
-    path: '/:id',
+    path: "/:id",
     element: <Character />,
+    errorElement: <ErrorPage />
   },
+  // {
+  //   path: '/refs',
+  //   element: <References />,
+  //   errorElement: <ErrorPage />
+  // }
+
 ]);
 
 
